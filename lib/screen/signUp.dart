@@ -1,22 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:jiit_shiksha/utils/inputField.dart';
 
-class Welcome extends StatefulWidget {
-  const Welcome({
+class SignUp extends StatefulWidget {
+  const SignUp({
     Key? key,
   }) : super(key: key);
 
   @override
-  _WelcomeState createState() => _WelcomeState();
+  _SignUpState createState() => _SignUpState();
 }
 
-class _WelcomeState extends State<Welcome> {
+class _SignUpState extends State<SignUp> {
   final _formKey = GlobalKey<FormState>();
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.deepPurple,
+      backgroundColor: Color(0xFFA22FD3),
       body: Form(
         key: _formKey,
         child: Padding(

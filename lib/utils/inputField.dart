@@ -46,7 +46,7 @@ class _InputFieldState extends State<InputField> {
           decoration: InputDecoration(
             hintText: widget.hint,
             hintStyle: TextStyle(color: Colors.white.withOpacity(0.7)),
-            fillColor: Colors.deepPurple.withOpacity(0.5),
+            fillColor: Color(0xFFB352DD),
             labelStyle: TextStyle(color: Colors.white),
             filled: true,
             errorStyle: TextStyle(color: Colors.yellow[300]),
