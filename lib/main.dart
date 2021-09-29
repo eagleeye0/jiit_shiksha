@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:jiit_shiksha/screen/home.dart';
 import 'screen/signUp.dart';
 
 void main() {
@@ -12,9 +13,9 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.purple,
       ),
-      home: SignUp(),
+      home: Home(),
     );
   }
 }
