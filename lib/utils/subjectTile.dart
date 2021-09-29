@@ -22,7 +22,7 @@ class SubjectTile extends StatelessWidget {
           child: Text(
             subject,
             style: TextStyle(
-              fontSize: 20,
+              fontSize: 22,
               color: Colors.white,
             ),
           ),
