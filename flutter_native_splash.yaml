@@ -1,0 +1,6 @@
+ flutter_native_splash:
+    image: assets/Images/logo.png
+    color: "42a5f5"
+    height: 200
+    width: 300
+    
