@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:jiit_shiksha/utils/inputField.dart';
+import 'package:jiit_shiksha/utils/routes.dart';
 
 class SignUp extends StatefulWidget {
   const SignUp({
@@ -48,7 +49,7 @@ class _SignUpState extends State<SignUp> {
                 onPressed: () {
                   if (_formKey.currentState!.validate()) {
                     _formKey.currentState!.save();
-                    Navigator.pushNamed(context, '/appScreen');
+                    Navigator.pushNamed(context, MyRoutes.homeRoute);
                   }
                 },
                 child: Text("Submit"),
