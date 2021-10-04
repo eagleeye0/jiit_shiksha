@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:jiit_shiksha/utils/routes.dart';
-import 'package:lottie/lottie.dart';
+// import 'package:lottie/lottie.dart';
 
 class Welcome extends StatefulWidget {
   @override
@@ -31,9 +31,9 @@ class _WelcomeState extends State<Welcome> {
             height: 150,
             width: 200,
           ),
-          Lottie.asset(
-            'assets/Lottie/Studying.json',
-          ),
+          // Lottie.asset(
+          //   'assets/Lottie/Studying.json',
+          // ),
           Container(
             height: 20.0,
           ),
