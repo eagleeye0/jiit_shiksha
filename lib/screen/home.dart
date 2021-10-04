@@ -10,6 +10,17 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> {
   String name = "Akshat";
+  List<String> subjects = [
+    "Engineering Maths",
+    "Database management system",
+    "Microprocessors",
+    "Aerospace/aeronautical engineering",
+    "Chemical engineering",
+    "Civil engineering",
+    "Electrical/electronic engineering",
+    "Mechanical engineering",
+    "Engineering management",
+  ];
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -64,68 +75,8 @@ class _HomeState extends State<Home> {
                 child: SingleChildScrollView(
                   scrollDirection: Axis.vertical,
                   child: Column(
-                    children: [
-                      Row(
-                        children: [
-                          SubjectTile(
-                            subject: "Maths",
-                          ),
-                          SubjectTile(
-                            subject: "DBMS",
-                          ),
-                        ],
-                      ),
-                      Row(
-                        children: [
-                          SubjectTile(
-                            subject: "Maths",
-                          ),
-                          SubjectTile(
-                            subject: "DBMS",
-                          ),
-                        ],
-                      ),
-                      Row(
-                        children: [
-                          SubjectTile(
-                            subject: "Maths",
-                          ),
-                          SubjectTile(
-                            subject: "DBMS",
-                          ),
-                        ],
-                      ),
-                      Row(
-                        children: [
-                          SubjectTile(
-                            subject: "Maths",
-                          ),
-                          SubjectTile(
-                            subject: "DBMS",
-                          ),
-                        ],
-                      ),
-                      Row(
-                        children: [
-                          SubjectTile(
-                            subject: "Maths",
-                          ),
-                          SubjectTile(
-                            subject: "DBMS",
-                          ),
-                        ],
-                      ),
-                      Row(
-                        children: [
-                          SubjectTile(
-                            subject: "Maths",
-                          ),
-                          SubjectTile(
-                            subject: "DBMS",
-                          ),
-                        ],
-                      ),
-                    ],
+                    children:
+                        subjects.map((e) => SubjectTile(subject: e)).toList(),
                   ),
                 ),
               ),

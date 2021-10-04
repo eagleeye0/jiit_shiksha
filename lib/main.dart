@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.purple,
       ),
-        initialRoute: MyRoutes.welcomeRoute,
+      initialRoute: MyRoutes.welcomeRoute,
       routes: {
         MyRoutes.welcomeRoute: (context) => Welcome(),
         MyRoutes.signupRoute: (context) => SignUp(),
