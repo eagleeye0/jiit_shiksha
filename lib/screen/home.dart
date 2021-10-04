@@ -9,7 +9,7 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
-  String name = "Karan";
+  String name = "Akshat";
   @override
   Widget build(BuildContext context) {
     return SafeArea(
