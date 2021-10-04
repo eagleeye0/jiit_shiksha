@@ -9,7 +9,7 @@ class Welcome extends StatefulWidget {
 
 class _WelcomeState extends State<Welcome> {
   bool unchanged = false;
-  Next_Tap_Func(BuildContext context) async {
+  nextTapFunc(BuildContext context) async {
     setState(() {
       unchanged = true;
     });
@@ -43,7 +43,7 @@ class _WelcomeState extends State<Welcome> {
               borderRadius: BorderRadius.circular(100),
               child: InkWell(
                 splashColor: Colors.green,
-                onTap: () => {Next_Tap_Func(context)},
+                onTap: () => {nextTapFunc(context)},
                 child: AnimatedContainer(
                   duration: Duration(seconds: 1),
                   width: 150,
