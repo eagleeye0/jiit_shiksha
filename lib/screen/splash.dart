@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:jiit_shiksha/screen/Welcome.dart';
 import 'package:jiit_shiksha/utils/routes.dart';
-import 'utils/routes.dart';
+import '../utils/routes.dart';
 
 extension HexColor on Color {
   /// String is in the format "aabbcc" or "ffaabbcc" with an optional leading "#".

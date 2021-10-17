@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:jiit_shiksha/screen/login.dart';
-import 'package:jiit_shiksha/splash.dart';
+import 'package:jiit_shiksha/screen/splash.dart';
 
 import 'screen/welcome.dart';
 import 'screen/mainScreen.dart';
 import 'screen/signUp.dart';
 import 'utils/routes.dart';
-import 'splash.dart';
+import 'screen/splash.dart';
 
 void main() {
   runApp(MyApp());
@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-        primarySwatch: Colors.purple,
+        primarySwatch: Colors.green,
       ),
       initialRoute: MyRoutes.splashRoute,
       debugShowCheckedModeBanner: false,

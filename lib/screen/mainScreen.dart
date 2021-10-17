@@ -30,12 +30,10 @@ class _MainScreenState extends State<MainScreen> {
           title: Text("JIIT Shiksha"),
           backgroundColor: Color(0xff03c04a),
           shadowColor: Color(0x00000000),
-          iconTheme: IconThemeData(color: Colors.black),
-          
+          iconTheme: IconThemeData(color: Colors.white),
         ),
         drawer: MyDrawer(),
         body: currentScreen,
-        backgroundColor: Color(0xFFFAF1FF),
         bottomNavigationBar: BottomNavigationBar(
           items: [
             BottomNavigationBarItem(

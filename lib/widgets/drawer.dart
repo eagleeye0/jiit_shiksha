@@ -8,7 +8,7 @@ class MyDrawer extends StatelessWidget {
   Widget build(BuildContext context) {
     return Drawer(
       child: Container(
-        color: Color(0x8003ac13),
+        // color: Color(0x8003ac13),
         child: ListView(
           children: [
             DrawerHeader(
@@ -25,8 +25,9 @@ class MyDrawer extends StatelessWidget {
             ),
             ListTile(
                 leading: Icon(
-                  CupertinoIcons.home,
-                  color: Colors.black,
+                  Icons.home,
+                  size: 34,
+                  color: Colors.green[700],
                 ),
                 title: Text(
                   "Home",
@@ -37,8 +38,9 @@ class MyDrawer extends StatelessWidget {
                 )),
             ListTile(
                 leading: Icon(
-                  CupertinoIcons.profile_circled,
-                  color: Colors.black,
+                  Icons.person,
+                  size: 34,
+                  color: Colors.green[700],
                 ),
                 title: Text(
                   "Profile",
@@ -49,8 +51,9 @@ class MyDrawer extends StatelessWidget {
                 )),
             ListTile(
                 leading: Icon(
-                  CupertinoIcons.search_circle,
-                  color: Colors.black,
+                  Icons.book,
+                  size: 34,
+                  color: Colors.green[700],
                 ),
                 title: Text(
                   "Subjects",
