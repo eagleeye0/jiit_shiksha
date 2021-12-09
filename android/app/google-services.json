@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "966625721183",
+    "project_id": "jiit-shiksha",
+    "storage_bucket": "jiit-shiksha.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:966625721183:android:c96cfaedd76cf01e17d4ea",
+        "android_client_info": {
+          "package_name": "com.karan.jiit_shiksha"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "966625721183-jsqp5gsis4q8u1c3g53qj4ieg7o7k19d.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.karan.jiit_shiksha",
+            "certificate_hash": "3dd4c99e781ebdb64cce747a20a036e8b589c25b"
+          }
+        },
+        {
+          "client_id": "966625721183-m4oql5t3sme4jksdr2jcsg8g3qvdn65d.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBuN5Hk4y9SpU4tsFzixhaJ1V7_zXTZWyY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "966625721183-m4oql5t3sme4jksdr2jcsg8g3qvdn65d.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
