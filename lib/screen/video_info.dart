@@ -21,6 +21,7 @@ class VideoInfo extends StatefulWidget {
 
 class _VideoInfoState extends State<VideoInfo> {
   List videoInfo = [];
+  List video = [];
   bool _playarea = false;
   bool _isPlaying = false;
   bool _disposed = false;
@@ -54,6 +55,18 @@ class _VideoInfoState extends State<VideoInfo> {
   @override
   Widget build(BuildContext context) {
     String subjectName = widget.subject!['name'];
+    String teacher = widget.subject!['teacher'];
+    int num = widget.subject!['files'].length;
+    videoInfo = widget.subject!['files'];
+    var final_min = 0, min = 0, sec = 0;
+
+    for (final e in videoInfo) {
+      final_min = e['time']![0] + final_min;
+      sec = e['time']![1] + sec;
+    }
+    min = (sec / 60).ceil();
+    final_min = min + final_min;
+
     return Scaffold(
         body: Container(
       decoration: _playarea == false
@@ -106,13 +119,12 @@ class _VideoInfoState extends State<VideoInfo> {
                         ),
                       ),
                       SizedBox(
-                        height: 5,
+                        height: 80,
                       ),
                       Row(
                         children: [
                           Container(
-                            width: 90,
-                            height: 30,
+                            padding: const EdgeInsets.all(8),
                             decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(10),
                                 gradient: LinearGradient(
@@ -137,7 +149,7 @@ class _VideoInfoState extends State<VideoInfo> {
                                   width: 5,
                                 ),
                                 Text(
-                                  "68 min",
+                                  final_min.toString() + " mins",
                                   style: TextStyle(
                                       fontSize: 16,
                                       color:
@@ -150,8 +162,9 @@ class _VideoInfoState extends State<VideoInfo> {
                             width: 20,
                           ),
                           Container(
-                            width: 240,
-                            height: 30,
+                            padding: const EdgeInsets.all(8),
+                            // width: 240,
+                            // height: 30,
                             decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(10),
                                 gradient: LinearGradient(
@@ -176,7 +189,7 @@ class _VideoInfoState extends State<VideoInfo> {
                                   width: 5,
                                 ),
                                 Text(
-                                  "Mohit Raina, CSE",
+                                  teacher,
                                   style: TextStyle(
                                       fontSize: 16,
                                       color:
@@ -248,7 +261,7 @@ class _VideoInfoState extends State<VideoInfo> {
                           width: 10,
                         ),
                         Text(
-                          "3 videos",
+                          num.toString() + " videos",
                           style: TextStyle(
                             fontSize: 15,
                             color: color.AppColor.setsColor,
@@ -284,6 +297,7 @@ class _VideoInfoState extends State<VideoInfo> {
     final remained = max(0, duration - head);
     final mins = convertTwo(remained ~/ 60.0);
     final secs = convertTwo(remained % 60);
+
     return Column(
       mainAxisSize: MainAxisSize.min,
       children: [
@@ -499,9 +513,10 @@ class _VideoInfoState extends State<VideoInfo> {
       return;
     }
 
-    if (_duration == null) {
-      _duration = _controller?.value.duration;
-    }
+    // if (_duration == null) {
+    _duration = _controller?.value.duration;
+    // }
+
     var duration = _duration;
     if (duration == null) return;
 
@@ -575,31 +590,40 @@ class _VideoInfoState extends State<VideoInfo> {
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(10),
                     image: DecorationImage(
-                        image: AssetImage(videoInfo[index]["thumbnail"]),
+                        image: NetworkImage(videoInfo[index]["thumbnail"]),
                         fit: BoxFit.cover)),
               ),
               SizedBox(
                 width: 10,
               ),
-              Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    videoInfo[index]["title"],
-                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-                  ),
-                  SizedBox(
-                    height: 10,
-                  ),
-                  Padding(
-                    padding: EdgeInsets.only(top: 3),
-                    child: Text(
-                      videoInfo[index]["time"],
-                      style: TextStyle(color: Colors.grey[500]),
+              Expanded(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      videoInfo[index]["title"],
+                      // overflow: TextOverflow.ellipsis,
+                      softWrap: true,
+                      style:
+                          TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
                     ),
-                  )
-                ],
+                    SizedBox(
+                      height: 10,
+                    ),
+                    Padding(
+                      padding: EdgeInsets.only(top: 3),
+                      child: Text(
+                        videoInfo[index]['time'][0].toString() +
+                            ":" +
+                            ((videoInfo[index]['time'][1] < 10)
+                                ? '0' + videoInfo[index]['time'][1].toString()
+                                : videoInfo[index]['time'][1].toString()),
+                        style: TextStyle(color: Colors.grey[500]),
+                      ),
+                    )
+                  ],
+                ),
               )
             ],
           ),

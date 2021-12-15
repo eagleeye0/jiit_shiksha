@@ -1,6 +1,11 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:jiit_shiksha/dataController/auth_base.dart';
+import 'package:jiit_shiksha/screen/home.dart';
+import 'package:jiit_shiksha/screen/landing_page.dart';
+import 'package:jiit_shiksha/screen/mainScreen.dart';
+import 'package:jiit_shiksha/screen/profile.dart';
+import 'package:jiit_shiksha/utils/routes.dart';
 import 'package:provider/provider.dart';
 
 class MyDrawer extends StatelessWidget {
@@ -26,11 +31,17 @@ class MyDrawer extends StatelessWidget {
                 accountName: Text(name!),
                 accountEmail: Text(email!),
                 currentAccountPicture: CircleAvatar(
-                  backgroundImage: AssetImage("assets/images/karanprofile.png"),
+                  backgroundImage: NetworkImage(profileImage!),
                 ),
               ),
             ),
             ListTile(
+                onTap: () {
+                  Navigator.pushReplacement(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => MainScreen(screen: 0)));
+                },
                 leading: Icon(
                   Icons.home,
                   size: 34,
@@ -44,6 +55,12 @@ class MyDrawer extends StatelessWidget {
                   ),
                 )),
             ListTile(
+                onTap: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => MainScreen(screen: 1)));
+                },
                 leading: Icon(
                   Icons.person,
                   size: 34,
@@ -56,19 +73,6 @@ class MyDrawer extends StatelessWidget {
                     color: Colors.black,
                   ),
                 )),
-            ListTile(
-                leading: Icon(
-                  Icons.book,
-                  size: 34,
-                  color: Colors.green[700],
-                ),
-                title: Text(
-                  "Subjects",
-                  textScaleFactor: 1.3,
-                  style: TextStyle(
-                    color: Colors.black,
-                  ),
-                ))
           ],
         ),
       ),

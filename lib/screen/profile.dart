@@ -38,7 +38,8 @@ class Profile extends StatelessWidget {
   Widget build(BuildContext context) {
     final Auth auth = Provider.of(context);
     final user = auth.currentUser();
-    final name = user!.displayName;
+    var name = user!.displayName;
+    var profile = name!.split(' ').first;
     final email = user.email;
     final profileImage = user.photoURL;
     return SingleChildScrollView(
@@ -55,7 +56,7 @@ class Profile extends StatelessWidget {
           children: [
             SizedBox(height: 40),
             Text(
-              name!,
+              profile!,
               style: TextStyle(fontSize: 36, color: Colors.white),
             ),
             SizedBox(height: 40),

@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:jiit_shiksha/utils/subjectTile.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:jiit_shiksha/dataController/auth_base.dart';
+import 'package:jiit_shiksha/utils/profileInfoTile.dart';
+import 'package:provider/provider.dart';
 
 final FirebaseFirestore _firestore = FirebaseFirestore.instance;
 final subjectDocument = _firestore.collection('subjects').get();
@@ -23,9 +27,14 @@ class _HomeState extends State<Home> {
   // return documents;
   // }
 
-  String name = "Karan";
   @override
   Widget build(BuildContext context) {
+    // final name = user!.displayName;
+    final Auth auth = Provider.of(context);
+    final user = auth.currentUser();
+    var name = user!.displayName;
+    name = name!.split(' ').first;
+    
     return Padding(
       padding: const EdgeInsets.all(20),
       child: Column(
